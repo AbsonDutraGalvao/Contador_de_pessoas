@@ -7,7 +7,7 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
-  // This widget is the root of your application.
+// This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -28,21 +28,18 @@ class Contador extends StatefulWidget {
 }
 
 class _ContadorState extends State<Contador> {
-
   int _people = 0;
   String _infoText = "Pode Entrar!";
 
-  void _changePeople(int delta){
+  void _changePeople(int delta) {
     setState(() {
       _people += delta;
 
-      if(_people < 0){
+      if (_people < 0) {
         _infoText = "Mundo Invertido";
-      }
-      else if (_people <= 10){
+      } else if (_people <= 10) {
         _infoText = 'Pode entrar';
-      }
-      else{
+      } else {
         _infoText = 'Lotado';
       }
     });
@@ -59,23 +56,39 @@ class _ContadorState extends State<Contador> {
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text('Pessoas $_people',
-            style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),),
+            Text(
+              'Pessoas $_people',
+              style:
+                  TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+            ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Padding(padding: EdgeInsets.all(10.0),
-                child: FlatButton( child: Text('+1'),onPressed: (){_changePeople(1);},)),
-                Padding(padding: EdgeInsets.all(10.0),
-                    child: FlatButton( child: Text('-1'),onPressed: (){_changePeople(-1);},))
+                Padding(
+                    padding: EdgeInsets.all(10.0),
+                    child: FlatButton(
+                      child: Text('+1'),
+                      onPressed: () {
+                        _changePeople(1);
+                      },
+                    )),
+                Padding(
+                    padding: EdgeInsets.all(10.0),
+                    child: FlatButton(
+                      child: Text('-1'),
+                      onPressed: () {
+                        _changePeople(-1);
+                      },
+                    ))
               ],
             ),
-            Text(_infoText,
-            style: TextStyle(
-              color: Colors.white,
-              fontStyle: FontStyle.italic,
-              fontSize: 30
-            ),)
+            Text(
+              _infoText,
+              style: TextStyle(
+                  color: Colors.white,
+                  fontStyle: FontStyle.italic,
+                  fontSize: 30),
+            )
           ],
         ),
       ),

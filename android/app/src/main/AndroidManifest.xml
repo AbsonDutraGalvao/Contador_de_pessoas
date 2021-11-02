@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.contadordepessoas">
+    package="com.example.contador_de_pessoas">
    <application
-        android:label="contadordepessoas"
+        android:label="contador_de_pessoas"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
